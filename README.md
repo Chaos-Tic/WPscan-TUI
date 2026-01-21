@@ -2,6 +2,8 @@
 
 ![WPScan TUI](image_readme_01.png)
 
+**Status:** Beta 0.1  
+
 Textual TUI inspired by “lazy*” tools to run WPScan comfortably: forms, handy presets, colored output, and session history.
 
 ## Requirements
