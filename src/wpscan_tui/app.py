@@ -15,27 +15,27 @@ from textual.widgets.option_list import Option
 class WPScanTUI(App):
     """Textual TUI wrapper around the WPScan CLI."""
 
-    CSS = """
+CSS = """
 Screen {
-    background: #0b0d12;
-    color: #e9edf5;
+    background: transparent;
+    color: inherit;
 }
 
 #banner {
-    background: #0f131b;
-    border: tall #ffffff15;
+    background: transparent;
+    border: tall grey35;
     padding: 0 2;
     height: 3;
     content-align: left middle;
 }
 
 #title {
-    color: #8ab4ff;
+    color: inherit;
     text-style: bold;
 }
 
 #subtitle {
-    color: #aeb8cc;
+    color: inherit;
     margin-left: 3;
 }
 
@@ -43,7 +43,7 @@ Screen {
     layout: horizontal;
     height: 1fr;
     padding: 1 1 0 1;
-    border-top: tall #ffffff10;
+    border-top: tall grey20;
 }
 
 #right {
@@ -58,20 +58,20 @@ Screen {
     min-width: 40;
     max-width: 54;
     padding: 1 2;
-    border: tall #ffffff1f;
-    background: #0f1219;
+    border: tall grey35;
+    background: transparent;
 }
 
 #log {
-    border: tall #ffffff1f;
-    background: #0c1018;
+    border: tall grey35;
+    background: transparent;
     margin: 0;
     padding: 1 1 0 1;
 }
 
 #history_panel {
-    border: tall #ffffff1f;
-    background: #0f1219;
+    border: tall grey35;
+    background: transparent;
     padding: 1;
     height: 14;
     margin-top: 1;
@@ -87,7 +87,7 @@ Input, Checkbox {
 }
 
 .section-title {
-    color: #aeb8cc;
+    color: inherit;
     text-style: bold;
     margin-top: 1;
     margin-bottom: 0;
@@ -95,25 +95,23 @@ Input, Checkbox {
 
 Button {
     margin-right: 1;
-    background: #111827;
-    color: #e9edf5;
+    background: transparent;
+    color: inherit;
     text-style: bold;
-    border: tall #ffffff10;
+    border: tall grey30;
 }
 
 Button.-success {
-    background: #8ab4ff;
-    color: #0b1020;
+    border: tall green;
 }
 
 Button.-error {
-    background: #ef6b6b;
-    color: #0b1020;
+    border: tall red;
 }
 
 #status {
     margin-top: 1;
-    color: #aeb8cc;
+    color: inherit;
 }
 """
 
