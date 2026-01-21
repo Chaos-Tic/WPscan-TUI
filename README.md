@@ -43,8 +43,9 @@ wpscan-tui
   - Désactiver la mise à jour DB (`--no-update`) par défaut pour éviter les prompts.
   - Sortie couleur (par défaut) ou sans couleur.
 - Champ “Extra arguments” pour ajouter n’importe quel flag WPScan (ex. `--detection-mode aggressive`).
-- Log en couleur en temps réel (stdout/stderr fusionnés).
-- Historique persistant des 50 derniers scans (`~/.local/state/wpscan-tui/history.json`) ; relecture instantanée dans le panneau de droite ; bouton Clear.
+- Log en couleur en temps réel (stdout/stderr fusionnés) avec barre de progression, pastilles d’état et temps écoulé au-dessus du panneau de log.
+- Historique de session (50 entrées max) stocké dans `~/.local/state/wpscan-tui/history.json` ; purgé automatiquement à la fermeture ou via le bouton Clear ; relecture instantanée dans le panneau de droite.
+- Wayland / Hyprland : fonctionne en terminal ; si les couleurs semblent limitées, exportez `COLORTERM=truecolor` avant de lancer `wpscan-tui`.
 - Statut clair (succès / code de sortie en rouge si ≠0).
 
 ## Exemple d’usage
