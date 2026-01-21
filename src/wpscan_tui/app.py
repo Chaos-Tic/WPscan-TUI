@@ -15,7 +15,7 @@ from textual.widgets.option_list import Option
 class WPScanTUI(App):
     """Textual TUI wrapper around the WPScan CLI."""
 
-CSS = """
+    CSS = """
 Screen {
     background: transparent;
     color: inherit;
@@ -113,7 +113,7 @@ Button.-error {
     margin-top: 1;
     color: inherit;
 }
-"""
+    """
 
     BINDINGS = [
         Binding("ctrl+s", "run_scan", "Run"),
