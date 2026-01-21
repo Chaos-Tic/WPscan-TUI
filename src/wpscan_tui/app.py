@@ -17,60 +17,64 @@ class WPScanTUI(App):
 
     CSS = """
 Screen {
-    background: #0f111a;
-    color: #d8e1ff;
+    background: #0b0d12;
+    color: #e9edf5;
 }
 
 #banner {
-    background: #121826;
-    border: tall #1f2a3a;
-    padding: 0 1;
+    background: #0f131b;
+    border: tall #ffffff15;
+    padding: 0 2;
     height: 3;
     content-align: left middle;
 }
 
 #title {
-    color: #7aa2f7;
+    color: #8ab4ff;
     text-style: bold;
 }
 
 #subtitle {
-    color: #8da2c0;
-    margin-left: 2;
+    color: #aeb8cc;
+    margin-left: 3;
 }
 
 #body {
     layout: horizontal;
     height: 1fr;
     padding: 1 1 0 1;
+    border-top: tall #ffffff10;
 }
 
 #right {
-    width: 60%;
-    min-width: 50;
+    width: 58%;
+    min-width: 48;
+    padding-left: 1;
+    padding-right: 0;
 }
 
 #form {
-    width: 40%;
-    min-width: 38;
-    max-width: 52;
+    width: 42%;
+    min-width: 40;
+    max-width: 54;
     padding: 1 2;
-    border: tall #1f2a3a;
-    background: #121826;
+    border: tall #ffffff1f;
+    background: #0f1219;
 }
 
 #log {
-    border: tall #1f2a3a;
-    background: #0c111b;
+    border: tall #ffffff1f;
+    background: #0c1018;
     margin: 0;
-    padding: 0 0 0 1;
+    padding: 1 1 0 1;
 }
 
 #history_panel {
-    border: tall #1f2a3a;
-    background: #121826;
+    border: tall #ffffff1f;
+    background: #0f1219;
     padding: 1;
     height: 14;
+    margin-top: 1;
 }
 
 #history_list {
@@ -83,7 +87,7 @@ Input, Checkbox {
 }
 
 .section-title {
-    color: #8da2c0;
+    color: #aeb8cc;
     text-style: bold;
     margin-top: 1;
     margin-bottom: 0;
@@ -91,24 +95,25 @@ Input, Checkbox {
 
 Button {
     margin-right: 1;
-    background: #1f2a3a;
-    color: #d8e1ff;
+    background: #111827;
+    color: #e9edf5;
     text-style: bold;
+    border: tall #ffffff10;
 }
 
 Button.-success {
-    background: #7aa2f7;
+    background: #8ab4ff;
     color: #0b1020;
 }
 
 Button.-error {
-    background: #f87171;
+    background: #ef6b6b;
     color: #0b1020;
 }
 
 #status {
     margin-top: 1;
-    color: #8da2c0;
+    color: #aeb8cc;
 }
 """
 
@@ -352,17 +357,17 @@ Button.-error {
     def refresh_history_list(self) -> None:
         lst = self.query_one("#history_list", OptionList)
         lst.clear_options()
-        for idx, item in enumerate(self.history):
+        for item in self.history:
             status = "ok" if (item.get("exit_code") in (None, 0)) else f"err {item.get('exit_code')}"
             label = f"{item.get('timestamp','')} | {status} | {item.get('target','')}"
-            lst.add_option(Option(label, value=idx))
+            lst.add_option(label)
 
     def load_selected_history(self) -> None:
         lst = self.query_one("#history_list", OptionList)
-        if not lst.options or lst.highlighted is None:
+        if lst.option_count == 0 or lst.highlighted is None:
             return
-        idx = lst.options[lst.highlighted].value
-        if idx is None or idx >= len(self.history):
+        idx = lst.highlighted
+        if idx >= len(self.history):
             return
         item = self.history[idx]
         log = self.query_one(RichLog)
