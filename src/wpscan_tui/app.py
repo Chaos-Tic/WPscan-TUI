@@ -18,24 +18,23 @@ class WPScanTUI(App):
     CSS = """
 Screen {
     background: transparent;
-    color: inherit;
 }
 
 #banner {
     background: transparent;
-    border: tall grey35;
+    border: tall #4a4a4a;
     padding: 0 2;
     height: 3;
     content-align: left middle;
 }
 
 #title {
-    color: inherit;
+    color: #e6eaf0;
     text-style: bold;
 }
 
 #subtitle {
-    color: inherit;
+    color: #c7ceda;
     margin-left: 3;
 }
 
@@ -43,7 +42,7 @@ Screen {
     layout: horizontal;
     height: 1fr;
     padding: 1 1 0 1;
-    border-top: tall grey20;
+    border-top: tall #333333;
 }
 
 #right {
@@ -58,19 +57,19 @@ Screen {
     min-width: 40;
     max-width: 54;
     padding: 1 2;
-    border: tall grey35;
+    border: tall #4a4a4a;
     background: transparent;
 }
 
 #log {
-    border: tall grey35;
+    border: tall #4a4a4a;
     background: transparent;
     margin: 0;
     padding: 1 1 0 1;
 }
 
 #history_panel {
-    border: tall grey35;
+    border: tall #4a4a4a;
     background: transparent;
     padding: 1;
     height: 14;
@@ -87,7 +86,7 @@ Input, Checkbox {
 }
 
 .section-title {
-    color: inherit;
+    color: #c7ceda;
     text-style: bold;
     margin-top: 1;
     margin-bottom: 0;
@@ -96,9 +95,9 @@ Input, Checkbox {
 Button {
     margin-right: 1;
     background: transparent;
-    color: inherit;
+    color: #e6eaf0;
     text-style: bold;
-    border: tall grey30;
+    border: tall #3a3a3a;
 }
 
 Button.-success {
@@ -111,7 +110,7 @@ Button.-error {
 
 #status {
     margin-top: 1;
-    color: inherit;
+    color: #c7ceda;
 }
     """
 
