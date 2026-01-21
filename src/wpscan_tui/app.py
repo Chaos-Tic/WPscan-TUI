@@ -188,8 +188,7 @@ Button.-error {
         elif event.button.id == "view_history":
             self.load_selected_history()
         elif event.button.id == "clear_history":
-            self.history = []
-            self.save_history()
+            self.clear_history_storage()
             self.refresh_history_list()
 
     async def action_run_scan(self) -> None:
@@ -403,6 +402,9 @@ Button.-error {
             path.unlink(missing_ok=True)
         except Exception:
             pass
+        lst = self.query_one_optional("#history_list", OptionList)
+        if lst:
+            lst.clear_options()
 
 
 def run() -> None:
