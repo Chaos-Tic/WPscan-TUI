@@ -1,0 +1,22 @@
+# Environnements
+.venv/
+venv/
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Textual
+.textual/
+
+# Build
+/dist/
+/build/
+
+# OS
+.DS_Store
+
+# Logs
+*.log
