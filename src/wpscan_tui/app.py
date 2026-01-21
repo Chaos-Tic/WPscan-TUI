@@ -333,6 +333,9 @@ Button.-error {
     async def on_exit(self) -> None:
         if self.process:
             await self.action_stop_scan()
+        self.clear_history_storage()
+        lst = self.query_one("#history_list", OptionList)
+        lst.clear_options()
 
     async def on_option_list_option_selected(self, event: OptionList.OptionSelected) -> None:
         self.load_selected_history()
@@ -389,6 +392,15 @@ Button.-error {
         path.parent.mkdir(parents=True, exist_ok=True)
         try:
             path.write_text(json.dumps(self.history, indent=2))
+        except Exception:
+            pass
+
+    def clear_history_storage(self) -> None:
+        """Remove history file and in-memory entries when quitting."""
+        self.history = []
+        path = self.history_path()
+        try:
+            path.unlink(missing_ok=True)
         except Exception:
             pass
 
