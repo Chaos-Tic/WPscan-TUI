@@ -9,18 +9,22 @@ Interface texte (Textual) inspirée des outils “lazy*” pour piloter WPScan c
 - Pour l’installation isolée : `pipx` (recommandé) ou un virtualenv.
 
 ## Installation
-Arch applique PEP 668 (environnement “externally-managed”), évitez `pip install .` en global.
+Arch applique PEP 668 (environnement “externally-managed”), évitez `pip install .` en global.  
+Pour toujours récupérer la dernière version du dépôt GitHub : utilisez directement l’URL git avec pipx.
 
 ```bash
-# Option 1 – pipx (recommandé pour un binaire CLI)
+# Option 1 – pipx depuis GitHub (dernière version)
+pipx install git+https://github.com/Chaos-Tic/WPscan-TUI.git
+
+# Option 2 – pipx sur le clone local
 pipx install .
 
-# Option 2 – virtualenv local au projet
+# Option 3 – virtualenv local au projet
 python -m venv .venv
 source .venv/bin/activate
 pip install .
 
-# Option 3 – système (déconseillé)
+# Option 4 – système (déconseillé)
 pip install --break-system-packages .
 ```
 
