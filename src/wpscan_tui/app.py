@@ -20,12 +20,12 @@ class WPScanTUI(App):
 
     CSS = """
 Screen {
-    background: transparent;
-    color: #ffffff;
+    background: #0b1020;
+    color: #e6eaf0;
 }
 
 #banner {
-    background: transparent;
+    background: #0c1325;
     padding: 0 2;
     height: 3;
     content-align: left middle;
@@ -37,12 +37,12 @@ Screen {
 #body {
     layout: horizontal;
     height: 1fr;
-    padding: 0 1 0 1;
+    padding: 0 0 0 0;
     background: transparent;
 }
 
 #left {
-    width: 58%;
+    width: 60%;
     min-width: 54;
     padding-right: 1;
     layout: vertical;
@@ -50,15 +50,15 @@ Screen {
 }
 
 #control_panel {
-    width: 42%;
+    width: 40%;
     min-width: 38;
     max-width: 52;
     height: 1fr;
 }
 
 .card {
-    background: transparent;
-    border: solid #7d8ca3;
+    background: #0e162b;
+    border: solid #566179;
     padding: 1;
     margin-bottom: 1;
 }
@@ -66,30 +66,29 @@ Screen {
 #enum_card {
     padding-bottom: 0;
     height: auto;
-    min-height: 4;
 }
 
 #stats_card {
-    background: transparent;
-    border: solid #7d8ca3;
+    background: #0e162b;
+    border: solid #566179;
     padding: 1;
-    margin-bottom: 0;
+    margin-bottom: 1;
 }
 
 .pill {
     padding: 0 1;
-    border: round #1f2937;
-    background: #0b1220;
-    color: #e5e7eb;
+    border: round #3b4457;
+    background: #0f1a30;
+    color: #e6eaf0;
 }
-.pill.-accent { border: round #38bdf8; color: #38bdf8; }
+.pill.-accent { border: round #7dd3fc; color: #7dd3fc; }
 .pill.-warn { border: round #f59e0b; color: #fbbf24; }
 .pill.-error { border: round #ef4444; color: #fca5a5; }
 .pill.-ok { border: round #22c55e; color: #86efac; }
 
 #progress_row {
     height: 2;
-    padding: 0 1;
+    padding: 0 0;
     border: none;
     background: transparent;
     content-align: left middle;
@@ -97,29 +96,29 @@ Screen {
 
 ProgressBar {
     width: 1fr;
-    color: #22c55e;
-    background: rgba(255,255,255,0.08);
+    color: #22e3a1;
+    background: #0b1220;
 }
 
 #log {
     border: none;
-    background: transparent;
+    background: #0d1529;
     margin: 0;
-    padding: 0 0 0 0;
+    padding: 0;
     height: 1fr;
-    min-height: 14;
+    min-height: 10;
 }
 
 #history_panel {
-    border: solid #7d8ca3;
-    background: transparent;
+    border: solid #566179;
+    background: #0e162b;
     padding: 1;
-    height: 10;
-    min-height: 9;
+    height: 8;
+    min-height: 7;
     margin-top: 1;
 }
 
-#history_list { height: 7; margin-top: 1; }
+#history_list { height: 6; margin-top: 1; }
 #history_hint { color: #cbd5e1; }
 
 OptionList {
@@ -130,8 +129,8 @@ OptionList {
 
 Input, Checkbox {
     margin-bottom: 1;
-    background: transparent;
-    border: solid #7d8ca3;
+    background: #0f1a30;
+    border: solid #566179;
     color: #e6eaf0;
 }
 
@@ -144,10 +143,10 @@ Input, Checkbox {
 
 Button {
     margin-right: 1;
-    background: #0b1220;
+    background: #0f1a30;
     color: #e6eaf0;
     text-style: bold;
-    border: solid #7d8ca3;
+    border: solid #566179;
 }
 Button.-success { border: round #22c55e; color: #22c55e; }
 Button.-error { border: round #ef4444; color: #ef4444; }

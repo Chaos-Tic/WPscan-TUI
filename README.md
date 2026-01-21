@@ -1,5 +1,7 @@
 # WPScan TUI
 
+![WPScan TUI](image_readme_01.png)
+
 Interface texte (Textual) inspirée des outils “lazy*” pour piloter WPScan confortablement : formulaires, presets utiles, sortie colorée et historique consultable.
 
 ## Prérequis
